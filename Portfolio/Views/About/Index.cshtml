@@ -1,0 +1,214 @@
+﻿@model Portfolio.ViewModels.AboutViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<section id="about" class="about section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>
+            I'm a passionate Full-Stack .NET Developer with a strong interest in building modern, responsive web applications.
+            I specialize in ASP.NET Core, C#, and front-end technologies like HTML, CSS, and JavaScript.
+        </p>
+        <p>
+            With a keen eye for detail and a commitment to delivering high-quality code, I thrive on solving complex problems
+            and creating user-friendly interfaces. My goal is to leverage my skills to contribute to innovative projects
+            that make a positive impact.
+        </p>
+    </div>
+    <!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+            <div class="col-lg-3">
+                <img src="assets/img/testimonials/MyPhoto2.jpeg " style="margin:0 ;border-radius:15px" class="img-fluid" alt="MyPhoto">
+            </div>
+            <div class="col-lg-7 content">
+                <h2> .Net Developer.</h2>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        @foreach(var m in Model.Info)
+                        {
+                            <ul>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>@m.Birthday</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span><a href="@m.Website">LINKEDIN</a></span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>@m.Phone</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>@m.Address</span></li>
+                            </ul>
+                        }
+                    </div>
+                    <div class="col-lg-6">
+                        @foreach (var m in Model.Info)
+                        {
+                            <ul>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>@m.Age</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>@m.Degree </span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>@m.Email</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>@m.Freelance</span></li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+                <p class="py-3">
+
+
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!-- /About Section -->
+<!-- Stats Section -->
+<section id="stats" class="stats section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+            @foreach (var s in Model.Stats)
+            {
+                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="bi bi-emoji-smile"></i>
+                    <div class="stats-item">
+                        <span data-purecounter-start="0" data-purecounter-end="@s.H_CLients" data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Happy Clients</p>
+                    </div>
+                </div>
+                <!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="bi bi-journal-richtext"></i>
+                    <div class="stats-item">
+                        <span data-purecounter-start="0" data-purecounter-end="@s.Projects" data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Projects</p>
+                    </div>
+                </div>
+                <!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="bi bi-headset"></i>
+                    <div class="stats-item">
+                        <span data-purecounter-start="0" data-purecounter-end="@s.HoursOfSupport" data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Hours Of Support</p>
+                    </div>
+                </div>
+                <!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+                    <i class="bi bi-people"></i>
+                    <div class="stats-item">
+                        <span data-purecounter-start="0" data-purecounter-end="@s.HardWorkers" data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Hard Workers</p>
+                    </div>
+                </div>
+                <!-- End Stats Item -->
+            }
+        </div>
+
+    </div>
+
+</section>
+<!-- /Stats Section -->
+
+<!-- Skills Section -->
+<section id="skills" class="skills section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+        <p>Hard work beats talent when talent doesn’t work hard. — Tim Notke</p>
+    </div>
+    <!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row skills-content skills-animation">
+
+            @foreach (var m in Model.Skills)
+            {
+                <div class="col-lg-6">
+
+
+                    <div class="progress">
+                        <span class="skill"><span>@m.skill1</span> <i class="val">@m.skill1_rate</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <!-- End Skills Item -->
+
+                    <div class="progress">
+                        <span class="skill"><span>@m.skill2</span> <i class="val">@m.skill2_rate</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <!-- End Skills Item -->
+
+                    <div class="progress">
+                        <span class="skill"><span>@m.skill3</span> <i class="val">@m.skill3_rate</i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <!-- End Skills Item -->
+
+                    <div class="progress">
+                        <span class="skill"><span>@m.skill4</span> <i class="val">@m.skill4_rate </i></span>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <!-- End Skills Item -->
+
+                </div> 
+
+                <div class="col-lg-6">
+
+                <div class="progress">
+                    <span class="skill"><span>@m.skill5</span> <i class="val">@m.skill5_rate </i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <!-- End Skills Item -->
+
+                <div class="progress">
+                    <span class="skill"><span>@m.skill6</span> <i class="val">@m.skill6_rate</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <!-- End Skills Item -->
+
+                <div class="progress">
+                    <span class="skill"><span>@m.skill7</span> <i class="val">@m.skill7_rate</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <!-- End Skills Item -->
+
+                <div class="progress">
+                    <span class="skill"><span>@m.skill8</span> <i class="val">@m.skill8_rate</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <!-- End Skills Item -->
+           
+
+            </div>
+          }
+        </div>
+
+    </div>
+
+</section>
+<!-- /Skills Section -->
